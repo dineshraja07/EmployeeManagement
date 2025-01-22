@@ -9,8 +9,8 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class EmployeeService {
-  private baseUrl = 'http://172.31.171.161:8080/api/';
-  // private baseUrl = '/api/';
+  private baseUrl = 'http://localhost:8081/api/';
+
 
   private formOneData!: FormOne;
   private formTwoData!: FormTwo;
@@ -88,6 +88,7 @@ export class EmployeeService {
       twitterUrl: this.formTwoData.twitterUrl,
       active: true
     }
+
     return this.httpClient.post(this.baseUrl + 'employee', employee);
   }
 
