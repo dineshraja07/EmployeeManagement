@@ -1,0 +1,80 @@
+<a class="back-btn" (click)="back()"> &lt; Back</a>
+<form [formGroup]="form" (ngSubmit)="click()" autocomplete="off">
+    <h2>Personal Details</h2>
+    <div class="form-group">
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Enter First Name</mat-label>
+            <input type="text" matInput formControlName="firstName" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Enter Last Name</mat-label>
+            <input type="text" matInput formControlName="lastName" autocomplete="off">
+        </mat-form-field>
+    </div>
+    <div class="form-group">
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Enter Blood Group</mat-label>
+            <input type="text" matInput formControlName="bloodGroup">
+            <!-- <mat-select matNativeControl required formControlName="bloodGroup">
+                <mat-option value="A+">A+</mat-option>
+                <mat-option value="A-">A-</mat-option>
+                <mat-option value="B+">B+</mat-option>
+                <mat-option value="B-">B-</mat-option>
+                <mat-option value="AB+">AB+</mat-option>
+                <mat-option value="AB-">AB-</mat-option>
+                <mat-option value="O+">O+</mat-option>
+                <mat-option value="O-">O-</mat-option>
+            </mat-select> -->
+        </mat-form-field>
+        <!-- <mat-form-field class="form-field" appearance="outline">
+            <mat-label> DOB</mat-label>
+            <input type="date" matInput formControlName="dob">
+        </mat-form-field> -->
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Enter DOB</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dob">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div class="form-group">
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Enter Mobile Number</mat-label>
+            <input type="text" matInput formControlName="phoneNumber" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Enter Emergency Number</mat-label>
+            <input type="text" matInput formControlName="emergencyNumber" autocomplete="off">
+        </mat-form-field>
+    </div>
+    <div class="form-group">
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label class="label">Choose Gender</mat-label>
+            <mat-select matNativeControl required formControlName="gender">
+                <mat-option value="Male">Male</mat-option>
+                <mat-option value="Female">Female</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Choose Marital Status</mat-label>
+            <mat-select matNativeControl required formControlName="maritalStatus">
+                <mat-option value="married">Married</mat-option>
+                <mat-option value="unmarried">UnMarried</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="form-group">
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Enter Email</mat-label>
+            <input type="email" matInput formControlName="email" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Enter Address</mat-label>
+            <input type="text" matInput formControlName="address" autocomplete="off">
+        </mat-form-field>
+    </div>
+    <div class="form-button-group">
+        <button type="button" (click)="back()">Cancel</button>
+        <button type="submit" [class]="{disabled:form.invalid}">Save & Continue</button>
+    </div>
+</form>

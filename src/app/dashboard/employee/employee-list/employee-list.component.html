@@ -1,0 +1,4 @@
+<app-crud-function (filter)="applyFilter($event)" [canDelete]="canDelete()"
+    (delete)="handleDelete()"></app-crud-function>
+<app-tabular-view [filter]="filterText()" [canDelete]="canDelete()"
+    (delete)="toggleDeleteIds($event)"></app-tabular-view>

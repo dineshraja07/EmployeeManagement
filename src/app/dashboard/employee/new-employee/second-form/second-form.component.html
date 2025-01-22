@@ -1,0 +1,37 @@
+<form [formGroup]="form" (ngSubmit)="click()">
+  <h2>Employee Details</h2>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Division</mat-label>
+    <mat-select matNativeControl required formControlName="divisionName">
+      <mat-option value="Retail">Retail</mat-option>
+      <mat-option value="Lab">Laboratory</mat-option>
+      <mat-option value="Industry">Industry</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Role</mat-label>
+    <input matInput formControlName="role">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Experience</mat-label>
+    <input matInput formControlName="experience">
+  </mat-form-field>
+
+  <h2>Social Links</h2>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>LinkedIn URL</mat-label>
+    <input matInput placeholder="LinkedIn URL" formControlName="linkedinUrl">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Twitter URL</mat-label>
+    <input matInput placeholder="Twitter URL" formControlName="twitterUrl">
+  </mat-form-field>
+
+  <div class="form-button-group">
+    <button (click)="back()" type="button">Back</button>
+    <button type="submit">Save</button>
+  </div>
+</form>

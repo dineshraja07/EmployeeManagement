@@ -1,0 +1,166 @@
+<a class="back-btn" (click)="back()"> &lt; Back</a>
+<div class="header container">
+  <div class="detail header">
+    <img src="assets/images/OIP.jpg" alt="" srcset="" />
+    <div class="info">
+      <h2>{{ firstName1 + " " + lastName1 }}</h2>
+      <p>{{ employee.role }}</p>
+      <p>40058015</p>
+      @if(!isClicked){
+      @if(this.employee.active)
+      {
+      <div class="active"><span></span>Active</div>
+      }
+      @else {
+      <div class="inactive"><span></span>In Active</div>
+      }
+      }
+      @else {
+      <app-dropdown (isChanged)="changed($event)" [activeFlag]="this.employee.active"></app-dropdown>
+      }
+
+
+      <div id="email-icon">
+        <img src="assets/images/email-icon.svg" alt="" srcset="" />
+        <p>{{email1}}</p>
+      </div>
+
+    </div>
+    <div id="submitbutton">
+      <button type="submit" [class]="{ update: isClicked }" (click)="click()"> Update<svg width="18" height="18"
+          viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M4.92989 0.391282C5.32906 0.0860079 5.8328 -0.0489354 6.33111 0.0159158C6.54697 0.0451841 6.74233 0.12055 6.93697 0.21494C7.12282 0.306403 7.33941 0.431526 7.59843 0.580794L7.62989 0.599086C7.88819 0.747623 8.1055 0.873477 8.27745 0.989087C8.45672 1.10909 8.62063 1.24006 8.75307 1.41348C9.05965 1.81226 9.19502 2.31567 9.12916 2.81396C9.09584 3.0254 9.02837 3.23002 8.92941 3.41982C8.83867 3.60567 8.71282 3.82226 8.56355 4.08055L4.81282 10.5708C4.57581 11.0014 4.21792 11.3532 3.78331 11.5827L2.4216 12.3379C2.18014 12.4718 1.96794 12.5896 1.78794 12.6686C1.60502 12.7491 1.37819 12.8266 1.12502 12.7988C0.957547 12.7801 0.795758 12.727 0.649815 12.6427C0.503872 12.5585 0.376931 12.445 0.276967 12.3093C0.125504 12.1045 0.0794061 11.8688 0.0574548 11.6698C0.0380496 11.4328 0.0282855 11.195 0.0281866 10.9571L0.00184493 9.40079C-0.0169874 8.90984 0.108695 8.42416 0.363309 8.00396L4.11477 1.51372C4.26331 1.25543 4.38916 1.03811 4.50477 0.86616C4.6255 0.686891 4.75648 0.523721 4.92916 0.39055M6.18697 1.10323C5.97701 1.07622 5.76487 1.133 5.59648 1.26128C5.5577 1.29128 5.50355 1.34543 5.41428 1.4786C5.31007 1.6397 5.21076 1.80393 5.11648 1.97104L5.13258 1.97689C5.41355 2.08665 5.83355 2.28128 6.43502 2.62811C7.02843 2.97055 7.40014 3.26616 7.63209 3.49665C7.77697 3.2464 7.87502 3.07518 7.94307 2.93616C8.01331 2.79201 8.0338 2.71884 8.04038 2.66982C8.0668 2.46059 8.01005 2.24934 7.88233 2.08153C7.85233 2.04201 7.79819 1.9886 7.66502 1.8986C7.46863 1.77314 7.26854 1.65358 7.06502 1.54006C6.78697 1.37909 6.60184 1.27299 6.45331 1.20055C6.30916 1.13031 6.23599 1.10982 6.18697 1.10323ZM6.98892 4.41055L6.98965 4.41275L6.99111 4.4164L6.99331 4.42226L6.99843 4.4325L7.00428 4.44421L7.00282 4.44201L6.98892 4.41055ZM7.0438 4.51445C7.02705 4.48908 7.0119 4.46269 6.99843 4.43543C6.96165 4.38418 6.92053 4.3362 6.8755 4.29201C6.72916 4.14348 6.43648 3.89689 5.88624 3.5786C5.32136 3.25299 4.95111 3.0847 4.73307 2.99909C4.67544 2.97651 4.61712 2.95577 4.55819 2.93689L1.31306 8.55274C1.1583 8.80033 1.08321 9.08943 1.09794 9.38104L1.12428 10.9132C1.12941 11.2206 1.13306 11.4123 1.1477 11.5505C1.15502 11.6193 1.1638 11.6545 1.16819 11.6676C1.18534 11.6863 1.20781 11.6994 1.23258 11.7049C1.2712 11.6944 1.30888 11.6807 1.34526 11.664C1.47258 11.6076 1.64087 11.5147 1.90867 11.3662L3.25063 10.622C3.51091 10.4893 3.72418 10.2799 3.8616 10.022L7.0438 4.51445ZM5.59355 4.08494C5.65598 4.12101 5.71069 4.16902 5.75455 4.22623C5.79842 4.28345 5.83058 4.34875 5.8492 4.4184C5.86781 4.48805 5.87253 4.56069 5.86306 4.63216C5.8536 4.70363 5.83014 4.77254 5.79404 4.83494L3.2938 9.16153C3.25803 9.22444 3.21016 9.27966 3.15297 9.324C3.09577 9.36834 3.03036 9.40093 2.96052 9.4199C2.89067 9.43886 2.81777 9.44382 2.746 9.43449C2.67423 9.42516 2.60501 9.40173 2.54234 9.36554C2.47966 9.32935 2.42476 9.28113 2.3808 9.22364C2.33684 9.16615 2.30468 9.10053 2.28618 9.03056C2.26768 8.96059 2.26321 8.88765 2.27301 8.81594C2.28282 8.74424 2.30671 8.67518 2.34331 8.61275L4.84428 4.28543C4.91712 4.15955 5.03694 4.06773 5.17743 4.03014C5.31792 3.99255 5.46759 4.01226 5.59355 4.08494Z"
+            fill="white" />
+        </svg>
+      </button>
+    </div>
+
+  </div>
+  <div id="camera-icon">
+    <img src="assets/images/camera-icon.svg" alt="" />
+    <p>Edit photo</p>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="detail body">
+    <div class="body1">
+      <h3 class="headings">Personal details</h3>
+
+      <div class="row">
+        <div class="col">
+          <p>First name</p>
+          <input type="text" [class]="{ update: isClicked }" [disabled]="!isClicked" [class]="{ update: isClicked }"
+            [(ngModel)]="employee.firstName" />
+        </div>
+        <div class="col">
+          <p>Last name</p>
+          <input type="text" [class]="{ update: isClicked }" [disabled]="!isClicked" [(ngModel)]="employee.lastName" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p>Blood Group</p>
+          <input type="text" [class]="{ update: isClicked }" [disabled]="!isClicked"
+            [(ngModel)]="employee.bloodGroup" />
+        </div>
+        <div class="col">
+          <p>DOB</p>
+          <input type="text" [class]="{ update: isClicked }" [disabled]="!isClicked" [(ngModel)]="employee.dob" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p>Mobile Number</p>
+          <input type="text" [class]="{ update: isClicked }" [disabled]="!isClicked"
+            [(ngModel)]="employee.phoneNumber" />
+
+
+        </div>
+        <div class="col">
+          <p>Emergency Number</p>
+          <input type="text" [class]="{ update: isClicked }" [disabled]="!isClicked"
+            [(ngModel)]="employee.emergencyNumber" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p>Gender</p>
+          <input type="text" [class]="{ update: isClicked }" [disabled]="!isClicked" [(ngModel)]="employee.gender" />
+        </div>
+        <div class="col">
+          <p>Marital status</p>
+          <input type="text" [class]="{ update: isClicked }" [disabled]="!isClicked"
+            [(ngModel)]="employee.maritalStatus" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p>Email</p>
+          <input type="text" [class]="{ largeinput: isClicked, LargeInput: !isClicked }" [disabled]="!isClicked"
+            [(ngModel)]="employee.email" />
+        </div>
+
+        <div class="col">
+          <p>Address</p>
+          <input type="text" [class]="{ largeinput: isClicked, LargeInput: !isClicked }" [disabled]="!isClicked"
+            [(ngModel)]="employee.address" />
+        </div>
+      </div>
+    </div>
+
+    <div class="body2">
+      <h3 class="headings">Employee detalis</h3>
+
+      <div class="row">
+        <div class="col">
+          <p>Division</p>
+          <input type="text" [class]="{ update: isClicked }" [disabled]="!isClicked"
+            [(ngModel)]="employee.divisionName" />
+        </div>
+        <div class="col">
+          <p>Role</p>
+          <input type="text" [class]="{ update: isClicked }" [disabled]="!isClicked" [(ngModel)]="employee.role" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p>Experience</p>
+          <input type="text" [class]="{ update: isClicked }" [disabled]="!isClicked"
+            [(ngModel)]="employee.experience" />
+
+        </div>
+      </div>
+
+      <h3 class="headings">Social Links</h3>
+      <div class="row">
+        <div class="col">
+          <p>Linked In URL</p>
+          <input type="text" [class]="{ largeinput: isClicked, LargeInput: !isClicked }" [disabled]="!isClicked"
+            [(ngModel)]="employee.linkedinUrl" />
+
+          <div class="col">
+            <p>Twitter URL</p>
+            <input type="text" [class]="{ largeinput: isClicked, LargeInput: !isClicked }" [disabled]="!isClicked"
+              [(ngModel)]="employee.twitterUrl" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <div id="savebutton">
+    <button type="submit" id="save" [class]="{ update: isUpdateClicked }" (click)="OnUpdate()">
+      Save
+    </button>
+  </div>
+
+</div>

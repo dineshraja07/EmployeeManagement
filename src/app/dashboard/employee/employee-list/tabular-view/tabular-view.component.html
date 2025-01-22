@@ -1,0 +1,111 @@
+@if(isLoading || isErrorOccured){
+@if(isLoading){
+<div class="spinner-container center">
+    <mat-spinner></mat-spinner>
+</div>
+}
+@else {
+@if(isErrorOccured){
+<div class="center fall-back">
+    Something Went wrong! unable to get result.
+</div>
+}
+}
+}
+@else {
+<div class="table-container">
+    <table mat-table [dataSource]="EMPLOYEEE_DATA" class="mat-elevation-z8">
+        <ng-container matColumnDef='delete'>
+            <th mat-header-cell *matHeaderCellDef class="delete">
+            </th>
+            <td mat-cell *matCellDef="let element" class="delete">
+                <input type="checkbox" (click)="toggleDeleteIds(element.id)" name="delete" id="{{element.id}}">
+            </td>
+        </ng-container>
+        <ng-container matColumnDef='ID'>
+            <th mat-header-cell *matHeaderCellDef>
+                <div class="icon">
+                    <i class="fa fa-id-badge" aria-hidden="true"></i>
+                    IDs
+                </div>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef='Name'>
+            <th mat-header-cell *matHeaderCellDef>
+                <i class="fa-solid fa-user"></i>
+                <span>
+                    Name
+                </span>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.firstName + element.lastName}}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef='Email'>
+            <th mat-header-cell *matHeaderCellDef>
+                <i class="fa-solid fa-envelope"></i>
+                <span>
+                    Email
+                </span>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+        <ng-container matColumnDef='PhoneNumber'>
+            <th mat-header-cell *matHeaderCellDef>
+                <div class="icon">
+                    <img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/iphone.png"
+                        style="vertical-align: bottom;" alt="iphone" /> PhoneNumber
+                </div>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+        </ng-container>
+        <ng-container matColumnDef='Division'>
+            <th mat-header-cell *matHeaderCellDef>
+                <div class="icon">
+                    <img height="20" width="20" src="./assets/images/division.png" style="vertical-align: bottom;"
+                        alt="division Logo" />
+                    Division
+                </div>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.divisionName}} </td>
+        </ng-container>
+        <ng-container matColumnDef='Role'>
+            <th mat-header-cell *matHeaderCellDef>
+                <div class="icon">
+                    <img height="20" width="20" src="./assets/images/identity.png" style="vertical-align: bottom;"
+                        alt="" /> Role
+                </div>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+        </ng-container>
+        <ng-container matColumnDef='Options'>
+            <th mat-header-cell *matHeaderCellDef> </th>
+            <td mat-cell *matCellDef="let element" class="viewDetails" (click)="toggleId(element.id)">
+                <div><img width="15" height="15" style="vertical-align:middle;"
+                        src="./assets/images/icons8-three-dots-15.png" alt="menu-2" />
+                </div>
+                <div [class]="{
+                    select:true,
+                    selected:element.id === Id
+                }">
+                    <div class="option" routerLink="../employee/{{element.id}}/details">View</div>
+                    <div class="option" routerLink="../employee/{{element.id}}/details" [queryParams]="{update:true}">
+                        Update</div>
+                    <div class="option" (click)="onDelete(element.id)">Delete</div>
+                </div>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row class="header-row" *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row class="cell-container" *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr class="cell-container" *matNoDataRow>
+            <td colspan="6" class="fallback-cell">No Records found</td>
+        </tr>
+    </table>
+    <mat-paginator class="paginator" [pageSizeOptions]="[5, 10, 20, 50]" aria-label="Select page of users"
+        [pageIndex]="currentPage" (page)="handlePageEvent($event)" [pageSize]="currentPageSize"
+        [showFirstLastButtons]="true"></mat-paginator>
+</div>
+
+}

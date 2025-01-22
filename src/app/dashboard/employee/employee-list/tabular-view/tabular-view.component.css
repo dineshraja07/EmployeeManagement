@@ -1,0 +1,124 @@
+.table-container {
+    margin: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid black;
+    overflow-x: auto;
+    overflow-y: visible;
+}
+
+.paginator {
+    background-color: white;
+}
+
+.deletecolumn {
+    display: none;
+}
+
+.delete {
+    width: 2px;
+}
+
+.icon {
+    display: inline;
+}
+
+td,
+th {
+    width: 25%;
+}
+
+th i {
+    display: inline-block;
+    margin: 0px 5px 0px 0px;
+}
+
+.viewDetails {
+    cursor: pointer;
+    /* position: relative; */
+}
+
+.spinner-container {
+    background-color: rgb(231, 231, 231);
+}
+
+.header-row {
+    background-color: #f2f2f2;
+}
+
+.cell-container {
+    position: relative;
+    background-color: white;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.center {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fall-back {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.fallback-cell {
+    font-size: 1.2em;
+    color: gray;
+    padding: 20px;
+}
+
+.select {
+    position: absolute;
+    display: none;
+    background-color: white;
+    z-index: 1;
+    border-radius: 5px;
+    width: 120px;
+    right: 10px;
+    border: 1px solid rgba(0, 0, 0, .5);
+    border-top: none;
+}
+
+.select .option:nth-child(1) {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.select .option {
+    padding: 10px;
+    border-top: 1px solid black;
+}
+
+.select .option:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+.selected {
+    display: block !important;
+}
+
+table {
+    border: 1px solid black;
+}
+
+@media screen and (max-width:768px) {
+    .table-container {
+        margin: 25px;
+    }
+}
+
+@media screen and (max-width:426px) {
+    .table-container {
+        margin: 10px;
+        font-size: xx-small;
+    }
+}

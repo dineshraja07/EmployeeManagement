@@ -1,0 +1,7 @@
+<mat-dialog-content>
+    <p>{{data.content}}</p>
+</mat-dialog-content>
+<mat-dialog-actions class="mat-actions">
+    <button aria-hidden="false" mat-button [mat-dialog-close]="true" cdkFocusInitial>{{data.success}}</button>
+    <button mat-button [mat-dialog-close]="false">{{data.cancel}}</button>
+</mat-dialog-actions>

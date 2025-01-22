@@ -1,0 +1,8 @@
+<app-form-handler [formStatus]=formStatus></app-form-handler>
+@if(formStatus.second)
+{
+<app-second-form (toggleform)="toggleSecond()"></app-second-form>
+}
+@else {
+<app-first-form (toggleNext)="toggleSecond()"></app-first-form>
+}

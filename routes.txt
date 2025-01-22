@@ -1,0 +1,10 @@
+dashboard
+    -employees index
+    -employee 
+        - empty path redirect to ../users
+        -new -> even fails/success redirect to ../../users
+        -id
+            - index - (view)
+            - update
+
+allow CORS in dev - "start:dev": "ng serve --proxy-config proxyconfig.json",

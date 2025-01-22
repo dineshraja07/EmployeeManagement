@@ -1,0 +1,102 @@
+
+:host{
+    height: max-content;
+}
+
+.Status{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.active{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    span{
+    background-color: #83BC34;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    
+    }
+   margin-left: 10px;
+}
+div.actiondiv{
+   position:absolute;
+   top:50px;
+    left: 75px;
+    width:   150px;
+    height: 150px;
+    border-radius: 5px;
+    border: 1px solid black;
+    display: flex;
+flex-direction: column;
+justify-content: space-around;
+background-color: white;
+padding: 10px;
+}
+.inactive{
+    display: flex;
+    align-items: center;
+    margin-left:10px;
+    gap: 10px;
+    span{
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    
+    }
+  
+}
+
+div{
+    display: none;
+}
+svg.update{
+    display: block;
+}
+svg{
+    display: none;
+}
+.container{
+    display: block;
+    position: relative;
+}
+#inactiveStatus.update{
+    display: block;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+#activeStatus.update{
+     
+    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+}
+ #activeStatus
+{
+    display: none;
+    span{
+        background-color:#83BC34;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+    }
+    
+}
+#inactiveStatus
+{
+     display: none;
+     
+    span{
+    background-color:red;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    
+    }
+} 

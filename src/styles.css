@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* @use '@angular/material' as mat;
+
+:root {
+    @include mat.form-field-overrides((filled-caret-color: orange,
+    filled-focus-active-indicator-color: red,
+    ));
+    } */
+@import 'ngx-toastr/toastr';
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Inter;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+
+div.mdc-text-field {
+    background-color: #f9f9f9 !important;
+}
+
+div.mdc-text-field {
+    background-color: white !important;
+}
+
+div.mdc-text-field.mdc-text-field--focused {
+    background-color: white !important;
+}
+
+div.mat-mdc-notch-piece {
+    border: none !important;
+    outline: none !important;
+}
+
+div.mdc-notched-outline {
+    border: none !important;
+    border-bottom: 2px solid #0B4EA1 !important;
+}
+
+div.mdc-notched-outline--notched {
+    border: 2px solid #0B4EA1 !important;
+    border-bottom: none;
+}
+
+.mdc-floating-label {
+    background-color: #f9f9f9 !important;
+    z-index: 1 !important;
+    /* border: 1px solid black !important; */
+}
+
+label.mdc-floating-label.mdc-floating-label--float-above {
+    background-color: white !important;
+}
+
+.toast-blue {
+    background-color: #0B4EA1 !important;
+}
+
+.mat-mdc-paginator-container {
+    justify-content: center !important;
+}
+
+/* .mat-mdc-cell.division,
+.mat-mdc-header-cell.division { */
+/* background-color: red !important; */
+/* width: 140px !important; */
+/* padding: 0px 30px !important; */
+/* } */
+
+th.division {
+    width: 200px !important;
+}
+
+.mat-mdc-dialog-surface {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px !important;
+}
+
+.mat-mdc-dialog-container {
+    position: absolute !important;
+    top: 45px !important;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content !important;
+    height: max-content !important;
+}
+
+.mat-mdc-dialog-actions {
+    /* padding: 16px 35px !important; */
+    justify-content: space-around !important;
+}
+
+.mat-mdc-dialog-actions .mat-mdc-button {
+    background-color: #0B4EA1;
+    border-radius: 5px;
+    color: white !important;
+    padding: 5px 25px;
+    font-size: smaller;
+}
