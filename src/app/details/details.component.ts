@@ -75,8 +75,6 @@ export class DetailsComponentUpdate implements OnInit {
     active: true
   };
 
-
-
   isClicked = false;
   isUpdateClicked = false;
   click() {

@@ -89,7 +89,7 @@ export class EmployeeService {
       active: true
     }
 
-    return this.httpClient.post(this.baseUrl + 'employee', employee);
+    return this.httpClient.post(this.baseUrl + 'employee/', employee);
   }
 
   deleteEmployee(empId: Number) {
