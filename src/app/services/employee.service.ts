@@ -70,7 +70,7 @@ export class EmployeeService {
   postEmployee() {
     let employee: Employee;
     employee = {
-      id: 1,
+      id: Math.random()*100,
       firstName: this.formOneData.firstName,
       lastName: this.formOneData.lastName,
       dob: this.formOneData.dob.toString(),
@@ -93,7 +93,8 @@ export class EmployeeService {
   }
 
   deleteEmployee(empId: Number) {
-    return this.httpClient.delete(this.baseUrl + 'employee/' + empId)
+    const url = `${this.baseUrl}employee/?id=${empId}`;
+    return this.httpClient.delete(url);
   }
 
   deleteEmployees(empIds: Number[]) {
